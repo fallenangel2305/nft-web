@@ -8,6 +8,7 @@
         label="NFT Wallet Address"
         placeholder="BJ5sBNC7QVRnnUrqqkUuipRAVWPS3HPJapafUyrc3Mxd"
         validation="required"
+        value= 123
       />
 
       <FormulateInput type="submit" label="View NFT" />
@@ -18,6 +19,7 @@
         <div id="image-out">
           <div id="image-in">
             <img
+              id="imgs"
               src="https://coingeek.com/wp-content/uploads/2021/04/nfts-and-stas-token-the-race-to-tokenize-everything.jpg"
               hidden
             />
@@ -66,8 +68,11 @@ export default {
               imageIn.setAttribute("id", "image-in");
               //creates an image element
               let img = document.createElement("img");
+              img.setAttribute("width", 250);
+
               //adds image to the image element
               img.src = images.replace(/['"]+/g, "");
+
               imageIn.appendChild(img);
               imageOut.appendChild(imageIn);
               document.querySelector("#images-container").appendChild(imageOut);
@@ -88,7 +93,6 @@ export default {
   max-width: 520px;
   text-align: left;
 }
-
 #board {
   margin: 20px;
   max-width: 100px;
@@ -104,6 +108,10 @@ export default {
   margin: 0;
 }
 #image-in img {
+  height: 100px;
+  width: 100px;
+}
+img {
   height: 100px;
   width: 100px;
 }
